@@ -1,0 +1,46 @@
+
+.mat-tab-group {
+    margin-bottom: 48px;
+    justify-content: space-between;
+}
+  
+  ::ng-deep .mat-tab-disabled {
+    pointer-events: none; 
+    opacity: 0.5; 
+  } 
+
+  .main-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header{
+    background-color: #ffff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: inline-block;
+    width: 100%;
+}
+
+.control-button {
+    width: 30px;
+    height: 30px;
+}
+
+.visitor-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.date-info div {
+    margin-top: 10px;
+}
+
+.tabs-container {
+    margin-top: 20px;
+}
+
+

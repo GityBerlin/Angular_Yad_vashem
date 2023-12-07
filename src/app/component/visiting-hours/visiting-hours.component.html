@@ -1,0 +1,50 @@
+<app-reservations (valueChange)="handleValueChange($event)"></app-reservations>
+<div class="controler">
+    <mat-card *ngFor="let time of listTime">
+        <mat-card-content>
+            <div *ngIf=" (receivedValue == '' )" class="allTimeVisiting">
+                <div>{{time.startTime}}</div>
+                <div>כרטיסים שנותרו: {{ time.availablePlaces }} </div>
+            </div>
+            <div
+                *ngIf=" (receivedValue == 'isMorning' && isTimeOfDay(time.startTime, 'morning' )) || (receivedValue == 'isAfternoon' && isTimeOfDay(time.startTime,'afternoon')) || receivedValue == 'isEvening' && isTimeOfDay(time.startTime,'evening')">
+                <div class="active"
+                    (click)="time.availablePlaces >= accountTicket && time.availablePlaces > 0 && !time.isClosed &&   navigateOrderTicket(time.startTime)">
+                    <div class="nonActibe" *ngIf="time.isClosed; else noTickets">
+                        <div>{{time.startTime}}</div>
+                        <div>סגור</div>
+                    </div>
+                    <ng-template #noTickets>
+
+                        <div *ngIf="time.availablePlaces > 0 && accountTicket>time.availablePlaces  ">
+                            <div>{{time.startTime}}</div>
+                            <div>כרטיסים שנותרו: {{ time.availablePlaces }}  </div>
+                        </div>
+                        <div *ngIf="time.availablePlaces > 0 && time.availablePlaces >= accountTicket">
+                            <div>{{time.startTime}}</div>
+                            <div>כרטיסים שנותרו: {{ time.availablePlaces }} </div>
+                        </div>
+                        <div class="nonActibe" *ngIf="time.availablePlaces === 0">
+                            <div>{{time.startTime}}</div>
+                            <div>אזלו</div>
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+<!-- <div *ngFor="let card of cards">
+    <a [routerLink]="['/order-confirmation',time]"></a>
+  </div> -->

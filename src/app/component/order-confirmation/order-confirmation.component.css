@@ -1,0 +1,25 @@
+.order {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.ticket-info {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.ticket-info span {
+    font-weight: bold;
+    color: red;
+}
+
+.success-message {
+    font-size: 20px;
+    color: #333;
+}
+
+.success-message span {
+    font-weight: bold;
+    color: red;
+}

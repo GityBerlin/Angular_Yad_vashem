@@ -1,0 +1,29 @@
+<div class="main-container">
+    <div class="header">
+        <p>כניסה למוזיאון</p>
+        <p>נא למלא את הפרטים הדרושים ולחץ המשך</p>
+
+        <p>פרטי הסיור</p>
+        <p>מספר מבקרים</p>
+        <div class="visitor-controls">
+            <button class="control-button" (click)="decreasePlaces()">-</button>
+            <input type="text" [(ngModel)]="numberOfPlaces" (input)="handleNumericInput($event)"
+                (keyup.enter)="confirmQuantity()">
+            <button class="control-button" (click)="addPlaces()">+</button>
+        </div>
+
+        <p>תאריך יום {{ currentDay }}: {{ currentDate | date: 'dd/MM/YY' }}</p>
+        <div *ngIf="accountOfTicket > 0">
+            <div>כרטיסים שנותרו: {{ accountOfTicket }}</div>
+        </div>
+        <div *ngIf="accountOfTicket === 0">
+            <div>אזלו</div>
+        </div>
+
+        <mat-tab-group (selectedIndexChange)="handleTabChange($event)">
+            <mat-tab label="בוקר" [disabled]="!active"></mat-tab>
+            <mat-tab label="צהריים"[disabled]="!active" ></mat-tab>
+            <mat-tab label="אחרי הצהריים" [disabled]="!active"></mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
