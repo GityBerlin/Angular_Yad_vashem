@@ -33,8 +33,8 @@ export class TimeService {
     var TimeClass=new Time(t,this.accountTicket,true)
     console.log(TimeClass);
     
-    var xxx=this.http.post<Time>(`${this.URL}/UpdateaVailablePlaces`, TimeClass);
-    return  xxx;
+    var Update=this.http.post<Time>(`${this.URL}/UpdateaVailablePlaces`, TimeClass);
+    return  Update;
 
   }
 
