@@ -1,22 +1,20 @@
-
 .mat-tab-group {
     margin-bottom: 48px;
     justify-content: space-between;
 }
-  
-  ::ng-deep .mat-tab-disabled {
-    pointer-events: none; 
-    opacity: 0.5; 
-  } 
 
-  .main-container {
-    max-width: 600px;
+::ng-deep .mat-tab-disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.main-container {
     margin: 0 auto;
     text-align: center;
 }
 
-.header{
-    background-color: #ffff;
+.header {
+    color: white;
     padding: 20px;
     margin: 10px 0;
     border-radius: 8px;
@@ -27,6 +25,10 @@
 .control-button {
     width: 30px;
     height: 30px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 5px 5px 5px 5px;
+    border-color: #0066cc;
 }
 
 .visitor-controls {
@@ -42,5 +44,10 @@
 .tabs-container {
     margin-top: 20px;
 }
+.current-day {
+    font-weight: bold;
+    white-space: nowrap; /* כדי למנוע מהטקסט לרדת לשורה נוספת */
+  }
 
-
+  
+  

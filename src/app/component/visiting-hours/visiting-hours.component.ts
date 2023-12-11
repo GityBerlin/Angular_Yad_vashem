@@ -34,8 +34,6 @@ export class VisitingHoursComponent implements OnInit {
   handleValueChange(value: string) {
     this.receivedValue = value;
     debugger
-    console.log(" this.receivedValue", this.receivedValue);
-    // this.GetDataByTimeOfDay(this.receivedValue)
   }
 
   isTimeOfDay(time: string, timeOfDay: string): boolean {
@@ -51,16 +49,8 @@ export class VisitingHoursComponent implements OnInit {
         return false;
     }
   }
-   j:any
   navigateOrderTicket(time: string) {
-   this.servTime.updateaVailablePlaces(time).subscribe(
-    (data) => {
-      console.log("😀,",this.listTime);
-      
-      this.j = data
-   console.log("############",this.j);
-    })
-   
+   this.servTime.updateaVailablePlaces(time);
     this.router.navigateByUrl(`/order-confirmation/${time}`);
   }
 

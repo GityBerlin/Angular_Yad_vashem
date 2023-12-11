@@ -30,10 +30,17 @@ export class TimeService {
   }
   updateaVailablePlaces(t: string) {
     this.time = t;
-    var TimeClass=new Time(t,this.accountTicket,true)
-    console.log(TimeClass);
+    var TimeClass=new Time(t,this.accountTicket,true)    
+    var Update=this.http.post<Time>(`${this.URL}UpdateaVailablePlaces`, TimeClass).subscribe(updatedTime => {
+       const index = this.listTimes.findIndex((x:Time) => x.startTime === updatedTime.startTime);
+    console.log("Update",updatedTime);
+
+    if (index !== -1) {
+      this.listTimes[index].availablePlaces =updatedTime.availablePlaces
+    }});
     
-    var Update=this.http.post<Time>(`${this.URL}/UpdateaVailablePlaces`, TimeClass);
+   
+    
     return  Update;
 
   }

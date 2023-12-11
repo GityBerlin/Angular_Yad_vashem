@@ -8,15 +8,15 @@
             </div>
             <div
                 *ngIf=" (receivedValue == 'isMorning' && isTimeOfDay(time.startTime, 'morning' )) || (receivedValue == 'isAfternoon' && isTimeOfDay(time.startTime,'afternoon')) || receivedValue == 'isEvening' && isTimeOfDay(time.startTime,'evening')">
-                <div class="active"
-                    (click)="time.availablePlaces >= accountTicket && time.availablePlaces > 0 && !time.isClosed &&   navigateOrderTicket(time.startTime)">
+                <div class="active" (click)="time.availablePlaces >= accountTicket && time.availablePlaces > 0 && !time.isClosed &&   navigateOrderTicket(time.startTime)">
                     <div class="nonActibe" *ngIf="time.isClosed; else noTickets">
                         <div>{{time.startTime}}</div>
                         <div>סגור</div>
                     </div>
                     <ng-template #noTickets>
 
-                        <div *ngIf="time.availablePlaces > 0 && accountTicket>time.availablePlaces  ">
+                        <div  *ngIf="time.availablePlaces > 0 && accountTicket>time.availablePlaces  ">
+                            
                             <div>{{time.startTime}}</div>
                             <div>כרטיסים שנותרו: {{ time.availablePlaces }}  </div>
                         </div>

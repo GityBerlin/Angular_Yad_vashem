@@ -1,16 +1,24 @@
-.controler {
+ .controler {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 8px;
-  border-radius: 16rem;
-}
+  color: white; 
+  align-items: center;
+  text-align: center;
+} 
 .active {
   border-color: black;
   position: relative;
   border-radius: 16rem;
+  
 }
 .active:hover {
   cursor: pointer;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 10px;
+  background-color:#003366; 
+  white-space: nowrap;
 }
 
 .nonActibe,

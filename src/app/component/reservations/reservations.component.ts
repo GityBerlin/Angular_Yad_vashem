@@ -33,7 +33,6 @@ export class ReservationsComponent implements OnInit {
   confirmQuantity() {
     this.active = this.numberOfPlaces > 0;
     if (this.active) {
-      console.log("Quantity confirmed:", this.numberOfPlaces);
       this.servTime.editCountTicket(this.numberOfPlaces);
       this.listTime = this.servTime.getList();
       this.time = this.valueChange.emit('isMorning');
@@ -63,12 +62,9 @@ export class ReservationsComponent implements OnInit {
   decreasePlaces() {
     if (this.numberOfPlaces > 0) {
       this.numberOfPlaces -= 1;
-      console.log("numberOfPlaces" + this.numberOfPlaces);
     }
   }
   sendValue(selectedValue: string) {
-    console.log("selectedValue", selectedValue);
-debugger
     this.valueChange.emit(selectedValue);
   }
   handleTabChange(selectedIndex: number) {

@@ -11,19 +11,19 @@
                 (keyup.enter)="confirmQuantity()">
             <button class="control-button" (click)="addPlaces()">+</button>
         </div>
-
-        <p>תאריך יום {{ currentDay }}: {{ currentDate | date: 'dd/MM/YY' }}</p>
+        <p class="current-day">תאריך יום {{ currentDay }} {{ currentDate | date: 'dd/MM/YY' }} </p>
+        
         <div *ngIf="accountOfTicket > 0">
-            <div>כרטיסים שנותרו: {{ accountOfTicket }}</div>
+            <div class="current-day">כרטיסים שנותרו: {{ accountOfTicket }}</div>
         </div>
         <div *ngIf="accountOfTicket === 0">
             <div>אזלו</div>
         </div>
 
         <mat-tab-group (selectedIndexChange)="handleTabChange($event)">
-            <mat-tab label="בוקר" [disabled]="!active"></mat-tab>
-            <mat-tab label="צהריים"[disabled]="!active" ></mat-tab>
             <mat-tab label="אחרי הצהריים" [disabled]="!active"></mat-tab>
+            <mat-tab label="צהריים" [disabled]="!active"></mat-tab>
+            <mat-tab label="בוקר" [disabled]="!active"></mat-tab>
         </mat-tab-group>
     </div>
 </div>
